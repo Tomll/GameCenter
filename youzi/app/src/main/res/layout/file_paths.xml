@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="wrap_content" android:layout_width="wrap_content">
+   <!--为了适配所有路径可以设置 path = "." -->
+   <external-path android:name="tt_external_root" android:path="." />
+   <external-path android:name="tt_external_download" android:path="Download" />
+   <external-files-path android:name="tt_external_files_download" android:path="Download" />
+   <files-path android:name="tt_internal_file_download" android:path="Download" />
+   <cache-path android:name="tt_internal_cache_download" android:path="Download" />
+</paths>

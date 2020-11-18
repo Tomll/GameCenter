@@ -1,0 +1,2546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <!--android:background="@drawable/shouye01"-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/myX5WebViewlayout"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <com.gameley.youzi.X5WebView
+            android:id="@+id/myX5WebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_28"
+            android:layout_marginLeft="@dimen/dp_310"
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/closeBtns"
+            android:clickable="true"
+            android:onClick="closeWeb"
+            android:src="@drawable/closebtn"
+            />
+
+        <FrameLayout
+            android:id="@+id/express_container"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:background="#203399cc" />
+
+        <FrameLayout
+            android:id="@+id/splash_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            >
+        </FrameLayout>
+        <!--
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/closeBtns212"
+            android:clickable="true"
+            android:onClick="playAD1"
+            android:src="@drawable/playbtn"
+            />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_100"
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/closeBtns213"
+            android:clickable="true"
+            android:onClick="playAD2"
+            android:src="@drawable/playbtn"
+            />
+        -->
+
+    </RelativeLayout>
+
+     <!--
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deviceId"
+            android:text="最近在玩"
+            android:layout_marginTop="@dimen/dp_6"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="@dimen/dp_16"
+        />
+    -->
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/page01"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_640"
+                android:visibility="visible"
+                android:layout_weight="9"
+                android:scrollbars="none"
+                android:fadingEdge="none"
+                android:overScrollMode="never"
+                android:padding="@dimen/dp_10">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/zuijinzaiwantitle"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="最近在玩"
+                            android:layout_marginTop="@dimen/dp_6"
+                            android:layout_marginLeft="@dimen/dp_18"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/dp_16"
+                        />
+                    </RelativeLayout>
+
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:id="@+id/zuijinzaiwan"
+                        android:fadingEdge="none"
+                        android:overScrollMode="never"
+                        android:padding="@dimen/dp_0">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/recentblock1"
+                            android:tag="recentblock1"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_110"
+                                android:id="@+id/tv_title"
+                                android:src="@drawable/recent_icon"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_54"
+                                android:layout_height="@dimen/dp_54"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_12"
+                                android:id="@+id/recent_icon1"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/recent_name1"
+                                android:layout_width="@dimen/dp_80"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/recent_icon1"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_9"
+                                android:layout_marginLeft="@dimen/dp_6"
+                                android:textSize="@dimen/dp_11" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/recentblock2"
+                            android:tag="recentblock2"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_110"
+                                android:id="@+id/tv_title2"
+                                android:src="@drawable/recent_icon"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_54"
+                                android:layout_height="@dimen/dp_54"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_12"
+                                android:id="@+id/recent_icon2"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/recent_name2"
+                                android:layout_width="@dimen/dp_80"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/recent_icon2"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_9"
+                                android:layout_marginLeft="@dimen/dp_6"
+                                android:textSize="@dimen/dp_11" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/recentblock3"
+                            android:tag="recentblock3"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_110"
+                                android:id="@+id/tv_title3"
+                                android:src="@drawable/recent_icon"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_54"
+                                android:layout_height="@dimen/dp_54"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_12"
+                                android:id="@+id/recent_icon3"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/recent_name3"
+                                android:layout_width="@dimen/dp_80"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/recent_icon3"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_9"
+                                android:layout_marginLeft="@dimen/dp_6"
+                                android:textSize="@dimen/dp_11" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/recentblock4"
+                            android:tag="recentblock4"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_110"
+                                android:id="@+id/tv_title4"
+                                android:src="@drawable/recent_icon"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_54"
+                                android:layout_height="@dimen/dp_54"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_12"
+                                android:id="@+id/recent_icon4"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/recent_name4"
+                                android:layout_width="@dimen/dp_80"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/recent_icon4"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_9"
+                                android:layout_marginLeft="@dimen/dp_6"
+                                android:textSize="@dimen/dp_11" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/recentblock5"
+                            android:tag="recentblock5"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_110"
+                                android:id="@+id/tv_title5"
+                                android:src="@drawable/recent_icon"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_54"
+                                android:layout_height="@dimen/dp_54"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_12"
+                                android:id="@+id/recent_icon5"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/recent_name5"
+                                android:layout_width="@dimen/dp_80"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/recent_icon5"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_9"
+                                android:layout_marginLeft="@dimen/dp_6"
+                                android:textSize="@dimen/dp_11" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="新游推荐"
+                        android:id="@+id/xinyoutuijian_title"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginLeft="@dimen/dp_18"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/dp_16"
+                    />
+
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/xinyoutuijian_hor"
+                        android:scrollbars="none"
+                        android:fadingEdge="none"
+                        android:overScrollMode="never"
+                        android:padding="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon000kk"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_titlekk"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_deskk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon000kk"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_16"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0002kk"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title2kk"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des2kk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0002kk"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_16"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0003kk"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title3kk"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des3kk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0003kk"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_6"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0004kk"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title4kk"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des4kk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0004kk"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_16"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0005kk"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title5kk"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des5kk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0005kk"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_16"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/xinyoutuijian_ver1"
+                        android:layout_marginTop="@dimen/dp_10"
+                        >
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:tag="gameicon1_1"
+                            android:id="@+id/gameicon1_1"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11c1"
+                                android:src="@drawable/icon_gray"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_124"
+                                android:layout_height="@dimen/dp_120"
+                                android:layout_marginLeft="@dimen/dp_2"
+                                android:layout_marginTop="@dimen/dp_1"
+                                android:id="@+id/tuijian_icon001"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/tuijian_text001"
+                                android:layout_width="@dimen/dp_90"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon001"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des1111c"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon001"
+                                android:text="1.7万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon1_2"
+                            android:id="@+id/gameicon1_2"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11c2"
+                                android:src="@drawable/icon_gray"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_124"
+                                android:layout_height="@dimen/dp_120"
+                                android:layout_marginLeft="@dimen/dp_2"
+                                android:layout_marginTop="@dimen/dp_1"
+                                android:id="@+id/tuijian_icon002"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/tuijian_text002"
+                                android:layout_width="@dimen/dp_90"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon002"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111122c"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon002"
+                                android:text="1.4万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon1_3"
+                            android:id="@+id/gameicon1_3"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11c3"
+                                android:src="@drawable/icon_gray"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_124"
+                                android:layout_height="@dimen/dp_120"
+                                android:layout_marginLeft="@dimen/dp_2"
+                                android:layout_marginTop="@dimen/dp_1"
+                                android:id="@+id/tuijian_icon003"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/tuijian_text003"
+                                android:layout_width="@dimen/dp_90"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon003"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111133c"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon003"
+                                android:text="1.1万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/xinyoutuijian_ver2"
+                        android:layout_marginTop="@dimen/dp_1"
+                        >
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon1_4"
+                            android:id="@+id/gameicon1_4"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11c4"
+                                android:src="@drawable/icon_gray"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_124"
+                                android:layout_height="@dimen/dp_120"
+                                android:layout_marginLeft="@dimen/dp_2"
+                                android:layout_marginTop="@dimen/dp_1"
+                                android:id="@+id/tuijian_icon004"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/tuijian_text004"
+                                android:layout_width="@dimen/dp_90"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon004"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des1111kc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon004"
+                                android:text="0.9万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon1_5"
+                            android:id="@+id/gameicon1_5"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11c5"
+                                android:src="@drawable/icon_gray"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_124"
+                                android:layout_height="@dimen/dp_120"
+                                android:layout_marginLeft="@dimen/dp_2"
+                                android:layout_marginTop="@dimen/dp_1"
+                                android:id="@+id/tuijian_icon005"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/tuijian_text005"
+                                android:layout_width="@dimen/dp_90"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon005"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111122mc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon005"
+                                android:text="1.5万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon1_6"
+                            android:id="@+id/gameicon1_6"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11c6"
+                                android:src="@drawable/icon_gray"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_124"
+                                android:layout_height="@dimen/dp_120"
+                                android:layout_marginLeft="@dimen/dp_2"
+                                android:layout_marginTop="@dimen/dp_1"
+                                android:id="@+id/tuijian_icon006"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/tuijian_text006"
+                                android:layout_width="@dimen/dp_90"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon006"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111133nc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tuijian_icon006"
+                                android:text="1.9万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="新游推荐"
+                        android:id="@+id/jinrituijian_title"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginLeft="@dimen/dp_18"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:visibility="gone"
+                        android:textSize="@dimen/dp_16"
+                        />
+
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/jinrituijian_hor"
+                        android:scrollbars="none"
+                        android:visibility="gone"
+                        android:fadingEdge="none"
+                        android:overScrollMode="never"
+                        android:padding="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0001mm"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_titlemm"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des1mm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0001mm"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_16"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0002mm"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title2mm"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des2mm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0002mm"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_16"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0003mm"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title3mm"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des3mm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0003mm"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_16"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0004mm"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title4mm"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des4mm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0004mm"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_16"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0005mm"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title5mm"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des5mm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0005mm"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginLeft="@dimen/dp_16"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0006mm"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title6mm"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des6mm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0006mm"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_18"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0007mm"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title7mm"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des7mm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0007mm"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_18"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_95"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_70"
+                                    android:layout_height="@dimen/dp_70"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:id="@+id/icon0008mm"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_110"
+                                    android:layout_height="@dimen/dp_110"
+                                    android:id="@+id/tv_title8mm"
+                                    android:src="@drawable/recent_icon"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_des8mm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icon0008mm"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_18"
+                                    android:textSize="@dimen/dp_12" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:id="@+id/jinrituijian_ver1"
+                        android:layout_marginTop="@dimen/dp_10"
+                        >
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon2_1"
+                            android:id="@+id/gameicon2_1"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/jinrituijian_icon001"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon001"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des1111"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon001"
+                                android:text="2.1万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon2_2"
+                            android:id="@+id/gameicon2_2"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/jinrituijian_icon002"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title1122"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des1122"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon002"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111122"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon002"
+                                android:text="2.1万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon2_3"
+                            android:id="@+id/gameicon2_3"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/jinrituijian_icon003"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title1133"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des1133"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon003"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111133"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon003"
+                                android:text="2.1万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:id="@+id/jinrituijian_ver2"
+                        android:layout_marginTop="@dimen/dp_1"
+                        >
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon2_4"
+                            android:id="@+id/gameicon2_4"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/jinrituijian_icon004"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11k"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des1144"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon004"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des1111k"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon004"
+                                android:text="2.1万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon2_5"
+                            android:id="@+id/gameicon2_5"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/jinrituijian_icon005"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title1122m"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des1155"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon005"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111122m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon005"
+                                android:text="2.1万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon2_6"
+                            android:id="@+id/gameicon2_6"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/jinrituijian_icon006"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title1133n"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des1166"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon006"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111133n"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/jinrituijian_icon006"
+                                android:text="2.1万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="新游推荐"
+                        android:id="@+id/jingpinxinyou_title"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginLeft="@dimen/dp_18"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/dp_16"
+                        />
+
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:fadingEdge="none"
+                        android:id="@+id/jingpinxinyou_hor"
+                        android:overScrollMode="never"
+                        android:padding="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_118"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:tag="gameicon3_1"
+                                android:id="@+id/gameicon3_1_h"
+                                android:onClick="openWeb"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_102"
+                                    android:layout_height="@dimen/dp_102"
+                                    android:layout_marginLeft="@dimen/dp_8"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:id="@+id/tuijian_icon001xinyou1"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_135"
+                                    android:layout_height="@dimen/dp_170"
+                                    android:id="@+id/tv_title11c1xinyou1"
+                                    android:src="@drawable/icon1"
+                                    />
+                                <TextView
+                                    android:id="@+id/tuijian_text001xinyou1"
+                                    android:layout_width="@dimen/dp_90"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou1"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:textSize="@dimen/dp_14" />
+                                <TextView
+                                    android:id="@+id/tv_des1111cxinyou1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou1"
+                                    android:text="1.1万人在玩"
+                                    android:textColor="#696969"
+                                    android:layout_marginTop="@dimen/dp_22"
+                                    android:layout_marginLeft="@dimen/dp_30"
+                                    android:textSize="@dimen/dp_10" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_118"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:tag="gameicon3_2"
+                                android:id="@+id/gameicon3_2_h"
+                                android:onClick="openWeb"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_102"
+                                    android:layout_height="@dimen/dp_102"
+                                    android:layout_marginLeft="@dimen/dp_8"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:id="@+id/tuijian_icon001xinyou2"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_135"
+                                    android:layout_height="@dimen/dp_170"
+                                    android:id="@+id/tv_title11c1xinyou2"
+                                    android:src="@drawable/icon2"
+                                    />
+                                <TextView
+                                    android:id="@+id/tuijian_text001xinyou2"
+                                    android:layout_width="@dimen/dp_90"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou2"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:textSize="@dimen/dp_14" />
+                                <TextView
+                                    android:id="@+id/tv_des1111cxinyou2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou2"
+                                    android:text="1.9万人在玩"
+                                    android:textColor="#696969"
+                                    android:layout_marginTop="@dimen/dp_22"
+                                    android:layout_marginLeft="@dimen/dp_30"
+                                    android:textSize="@dimen/dp_10" />
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_118"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:tag="gameicon3_3"
+                                android:id="@+id/gameicon3_3_h"
+                                android:onClick="openWeb"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_102"
+                                    android:layout_height="@dimen/dp_102"
+                                    android:layout_marginLeft="@dimen/dp_8"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:id="@+id/tuijian_icon001xinyou3"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_135"
+                                    android:layout_height="@dimen/dp_170"
+                                    android:id="@+id/tv_title11c1xinyou3"
+                                    android:src="@drawable/icon3"
+                                    />
+                                <TextView
+                                    android:id="@+id/tuijian_text001xinyou3"
+                                    android:layout_width="@dimen/dp_90"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou3"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:textSize="@dimen/dp_14" />
+                                <TextView
+                                    android:id="@+id/tv_des1111cxinyou3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou3"
+                                    android:text="0.9万人在玩"
+                                    android:textColor="#696969"
+                                    android:layout_marginTop="@dimen/dp_22"
+                                    android:layout_marginLeft="@dimen/dp_30"
+                                    android:textSize="@dimen/dp_10" />
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_118"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:tag="gameicon3_4"
+                                android:id="@+id/gameicon3_4_h"
+                                android:onClick="openWeb"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_102"
+                                    android:layout_height="@dimen/dp_102"
+                                    android:layout_marginLeft="@dimen/dp_8"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:id="@+id/tuijian_icon001xinyou4"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_135"
+                                    android:layout_height="@dimen/dp_170"
+                                    android:id="@+id/tv_title11c1xinyou4"
+                                    android:src="@drawable/icon4"
+                                    />
+                                <TextView
+                                    android:id="@+id/tuijian_text001xinyou4"
+                                    android:layout_width="@dimen/dp_90"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou4"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:textSize="@dimen/dp_14" />
+                                <TextView
+                                    android:id="@+id/tv_des1111cxinyou4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou4"
+                                    android:text="1.7万人在玩"
+                                    android:textColor="#696969"
+                                    android:layout_marginTop="@dimen/dp_22"
+                                    android:layout_marginLeft="@dimen/dp_30"
+                                    android:textSize="@dimen/dp_10" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_118"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:tag="gameicon3_5"
+                                android:id="@+id/gameicon3_5_h"
+                                android:onClick="openWeb"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_102"
+                                    android:layout_height="@dimen/dp_102"
+                                    android:layout_marginLeft="@dimen/dp_8"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:id="@+id/tuijian_icon001xinyou5"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_135"
+                                    android:layout_height="@dimen/dp_170"
+                                    android:id="@+id/tv_title11c1xinyou5"
+                                    android:src="@drawable/icon1"
+                                    />
+                                <TextView
+                                    android:id="@+id/tuijian_text001xinyou5"
+                                    android:layout_width="@dimen/dp_90"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou5"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:textSize="@dimen/dp_14" />
+                                <TextView
+                                    android:id="@+id/tv_des1111cxinyou5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou5"
+                                    android:text="1.4万人在玩"
+                                    android:textColor="#696969"
+                                    android:layout_marginTop="@dimen/dp_22"
+                                    android:layout_marginLeft="@dimen/dp_30"
+                                    android:textSize="@dimen/dp_10" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_118"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:tag="gameicon3_6"
+                                android:id="@+id/gameicon3_6_h"
+                                android:onClick="openWeb"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_102"
+                                    android:layout_height="@dimen/dp_102"
+                                    android:layout_marginLeft="@dimen/dp_8"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:id="@+id/tuijian_icon001xinyou6"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_135"
+                                    android:layout_height="@dimen/dp_170"
+                                    android:id="@+id/tv_title11c1xinyou6"
+                                    android:src="@drawable/icon1"
+                                    />
+                                <TextView
+                                    android:id="@+id/tuijian_text001xinyou6"
+                                    android:layout_width="@dimen/dp_90"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou6"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:textSize="@dimen/dp_14" />
+                                <TextView
+                                    android:id="@+id/tv_des1111cxinyou6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou6"
+                                    android:text="1.5万人在玩"
+                                    android:textColor="#696969"
+                                    android:layout_marginTop="@dimen/dp_22"
+                                    android:layout_marginLeft="@dimen/dp_30"
+                                    android:textSize="@dimen/dp_10" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_118"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:tag="gameicon3_7"
+                                android:visibility="gone"
+                                android:id="@+id/gameicon3_7_h"
+                                android:onClick="openWeb"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_102"
+                                    android:layout_height="@dimen/dp_102"
+                                    android:layout_marginLeft="@dimen/dp_8"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:id="@+id/tuijian_icon001xinyou7"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_135"
+                                    android:layout_height="@dimen/dp_170"
+                                    android:id="@+id/tv_title11c1xinyou7"
+                                    android:src="@drawable/icon1"
+                                    />
+                                <TextView
+                                    android:id="@+id/tuijian_text001xinyou7"
+                                    android:layout_width="@dimen/dp_90"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou7"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_12"
+                                    android:textSize="@dimen/dp_14" />
+                                <TextView
+                                    android:id="@+id/tv_des1111cxinyou7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou7"
+                                    android:text="2.1万人在玩"
+                                    android:textColor="#696969"
+                                    android:layout_marginTop="@dimen/dp_22"
+                                    android:layout_marginLeft="@dimen/dp_30"
+                                    android:textSize="@dimen/dp_10" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_118"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:tag="gameicon3_8"
+                                android:visibility="gone"
+                                android:id="@+id/gameicon3_8_h"
+                                android:onClick="openWeb"
+                                android:padding="@dimen/dp_1" >
+                                <ImageView
+                                    android:layout_width="@dimen/dp_102"
+                                    android:layout_height="@dimen/dp_102"
+                                    android:layout_marginLeft="@dimen/dp_8"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:id="@+id/tuijian_icon001xinyou8"
+                                    android:src="@drawable/icon000"
+                                    />
+                                <ImageView
+                                    android:layout_width="@dimen/dp_135"
+                                    android:layout_height="@dimen/dp_170"
+                                    android:id="@+id/tv_title11c1xinyou8"
+                                    android:src="@drawable/icon1"
+                                    />
+                                <TextView
+                                    android:id="@+id/tuijian_text001xinyou8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou8"
+                                    android:text="羊羊保卫战"
+                                    android:textColor="#000"
+                                    android:layout_marginTop="@dimen/dp_0"
+                                    android:layout_marginLeft="@dimen/dp_18"
+                                    android:textSize="@dimen/dp_14" />
+                                <TextView
+                                    android:id="@+id/tv_des1111cxinyou8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tuijian_icon001xinyou8"
+                                    android:text="2.1万人在玩"
+                                    android:textColor="#696969"
+                                    android:layout_marginTop="@dimen/dp_22"
+                                    android:layout_marginLeft="@dimen/dp_26"
+                                    android:textSize="@dimen/dp_10" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/jingpinxinyou_ver1"
+                        android:layout_marginTop="@dimen/dp_10"
+                        >
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon3_1"
+                            android:id="@+id/gameicon3_1"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/icon00011nn"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11nn"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des11nn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon00011nn"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_7"
+                                android:layout_marginLeft="@dimen/dp_30"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des1111nn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon00011nn"
+                                android:text="1.1万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon3_2"
+                            android:id="@+id/gameicon3_2"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/icon0001122nn"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title1122nn"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des1122nn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon0001122nn"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_7"
+                                android:layout_marginLeft="@dimen/dp_30"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111122nn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon0001122nn"
+                                android:text="1.9万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon3_3"
+                            android:id="@+id/gameicon3_3"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/icon0001133nn"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title1133nn"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des1133nn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon0001133nn"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_7"
+                                android:layout_marginLeft="@dimen/dp_30"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111133nn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon0001133nn"
+                                android:text="0.9万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/jingpinxinyou_ver2"
+                        android:layout_marginTop="@dimen/dp_1"
+                        >
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon3_4"
+                            android:id="@+id/gameicon3_4"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/icon00011knn"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title11knn"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des11knn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon00011knn"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_7"
+                                android:layout_marginLeft="@dimen/dp_30"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des1111knn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon00011knn"
+                                android:text="1.7万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon3_5"
+                            android:id="@+id/gameicon3_5"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/icon0001122mnn"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title1122mnn"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des1122mnn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon0001122mnn"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_7"
+                                android:layout_marginLeft="@dimen/dp_30"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111122mnn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon0001122mnn"
+                                android:text="1.4万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="gameicon3_6"
+                            android:id="@+id/gameicon3_6"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_marginLeft="@dimen/dp_9"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:id="@+id/icon0001133nnn"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_135"
+                                android:layout_height="@dimen/dp_170"
+                                android:id="@+id/tv_title1133nnn"
+                                android:src="@drawable/game_icon"
+                                />
+                            <TextView
+                                android:id="@+id/tv_des1133nnn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon0001133nnn"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginTop="@dimen/dp_7"
+                                android:layout_marginLeft="@dimen/dp_30"
+                                android:textSize="@dimen/dp_14" />
+                            <TextView
+                                android:id="@+id/tv_des111133nnn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/icon0001133nnn"
+                                android:text="1.5万人在玩"
+                                android:textColor="#696969"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginLeft="@dimen/dp_26"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+    <!-- 排行页面 -->
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/page02"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_640"
+                android:visibility="gone"
+                android:layout_weight="9"
+                android:scrollbars="none"
+                android:fadingEdge="none"
+                android:overScrollMode="never"
+                android:padding="@dimen/dp_8">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <!-- 前三名 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="rankicon1_1"
+                            android:id="@+id/rankicon1_1"
+                            android:onClick="openWeb"
+                            android:paddingTop="@dimen/dp_56" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_80"
+                                android:layout_height="@dimen/dp_80"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_33"
+                                android:id="@+id/rankicon1"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_110"
+                                android:layout_height="@dimen/dp_175"
+                                android:id="@+id/tv_title2003"
+                                android:layout_marginLeft="@dimen/dp_13"
+                                android:src="@drawable/orange_icon"
+                                />
+                            <TextView
+                                android:id="@+id/rankname1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/rankicon1"
+                                android:text="羊羊保卫战"
+                                android:textColor="#FFF"
+                                android:layout_marginLeft="@dimen/dp_25"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:textSize="@dimen/dp_12" />
+                            <TextView
+                                android:id="@+id/tv_des2003type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/rankicon1"
+                                android:text="休闲益智"
+                                android:textColor="#FFF"
+                                android:layout_marginLeft="@dimen/dp_35"
+                                android:layout_marginTop="@dimen/dp_18"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/dp_0"
+                            android:paddingBottom="@dimen/dp_50"
+                            android:tag="rankicon1_2"
+                            android:id="@+id/rankicon1_2"
+                            android:onClick="openWeb"
+                            android:paddingLeft="@dimen/dp_8">
+                            <ImageView
+                                android:layout_width="@dimen/dp_98"
+                                android:layout_height="@dimen/dp_98"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_52"
+                                android:id="@+id/rankicon2"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_130"
+                                android:layout_height="@dimen/dp_190"
+                                android:id="@+id/tv_title2003m"
+                                android:layout_marginLeft="@dimen/dp_0"
+                                android:layout_marginTop="@dimen/dp_1"
+                                android:src="@drawable/blue_icon"
+                                />
+                            <TextView
+                                android:id="@+id/rankname2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/rankicon2"
+                                android:text="羊羊保卫战"
+                                android:textColor="#FFF"
+                                android:layout_marginLeft="@dimen/dp_28"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:textSize="@dimen/dp_12" />
+                            <TextView
+                                android:id="@+id/tv_des2003typem"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/rankicon2"
+                                android:text="休闲益智"
+                                android:textColor="#FFF"
+                                android:layout_marginLeft="@dimen/dp_44"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="rankicon1_3"
+                            android:id="@+id/rankicon1_3"
+                            android:onClick="openWeb"
+                            android:paddingTop="@dimen/dp_56" >
+                            <ImageView
+                                android:layout_width="@dimen/dp_80"
+                                android:layout_height="@dimen/dp_80"
+                                android:layout_marginLeft="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_33"
+                                android:id="@+id/rankicon3"
+                                android:src="@drawable/icon000"
+                                />
+                            <ImageView
+                                android:layout_width="@dimen/dp_110"
+                                android:layout_height="@dimen/dp_175"
+                                android:id="@+id/tv_title2003l"
+                                android:layout_marginLeft="@dimen/dp_13"
+                                android:src="@drawable/orange_icon2"
+                                />
+                            <TextView
+                                android:id="@+id/rankname3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/rankicon3"
+                                android:text="羊羊保卫战"
+                                android:textColor="#FFF"
+                                android:layout_marginLeft="@dimen/dp_28"
+                                android:layout_marginTop="@dimen/dp_0"
+                                android:textSize="@dimen/dp_12" />
+                            <TextView
+                                android:id="@+id/tv_des2003typel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/rankicon3"
+                                android:text="休闲益智"
+                                android:textColor="#FFF"
+                                android:layout_marginLeft="@dimen/dp_37"
+                                android:layout_marginTop="@dimen/dp_18"
+                                android:textSize="@dimen/dp_10" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+
+                    <!-- 排行榜 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/dp_2"
+                        >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_70"
+                            android:tag="rankicon1_4"
+                            android:id="@+id/rankicon1_4"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <TextView
+                                android:id="@+id/tv_despaihang1text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/dp_20" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_70"
+                                android:layout_height="@dimen/dp_70"
+                                android:layout_marginLeft="@dimen/dp_22"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:id="@+id/rankicon4"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/rankname4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:textSize="@dimen/dp_16" />
+                            <TextView
+                                android:id="@+id/rankdes1"
+                                android:layout_width="@dimen/dp_175"
+                                android:layout_height="wrap_content"
+                                android:text="赛罗迪迦奥特曼最强传承"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_40"
+                                android:textSize="@dimen/dp_10" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginLeft="@dimen/dp_275"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:id="@+id/playBtn01"
+                                android:src="@drawable/playbtn"
+                                />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_70"
+                            android:layout_marginTop="@dimen/dp_1"
+                            android:tag="rankicon1_5"
+                            android:id="@+id/rankicon1_5"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <TextView
+                                android:id="@+id/tv_despaihang1text002"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/dp_20" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_70"
+                                android:layout_height="@dimen/dp_70"
+                                android:layout_marginLeft="@dimen/dp_22"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:id="@+id/rankicon5"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/rankname5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:textSize="@dimen/dp_16" />
+                            <TextView
+                                android:id="@+id/rankdes2"
+                                android:layout_width="@dimen/dp_175"
+                                android:layout_height="wrap_content"
+                                android:text="赛罗迪迦奥特曼最强传承"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_40"
+                                android:textSize="@dimen/dp_10" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginLeft="@dimen/dp_275"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:id="@+id/playBtn01002"
+                                android:src="@drawable/playbtn"
+                                />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_70"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:tag="rankicon1_6"
+                            android:id="@+id/rankicon1_6"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <TextView
+                                android:id="@+id/tv_despaihang1text003"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="6"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/dp_20" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_70"
+                                android:layout_height="@dimen/dp_70"
+                                android:layout_marginLeft="@dimen/dp_22"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:id="@+id/rankicon6"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/rankname6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:textSize="@dimen/dp_16" />
+                            <TextView
+                                android:id="@+id/rankdes3"
+                                android:layout_width="@dimen/dp_175"
+                                android:layout_height="wrap_content"
+                                android:text="赛罗迪迦奥特曼最强传承"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_40"
+                                android:textSize="@dimen/dp_10" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginLeft="@dimen/dp_275"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:id="@+id/playBtn01003"
+                                android:src="@drawable/playbtn"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_70"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:tag="rankicon1_7"
+                            android:id="@+id/rankicon1_7"
+                            android:visibility="gone"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <TextView
+                                android:id="@+id/tv_despaihang1text004"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="7"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/dp_20" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_70"
+                                android:layout_height="@dimen/dp_70"
+                                android:layout_marginLeft="@dimen/dp_22"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:id="@+id/rankicon7"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/rankname7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:textSize="@dimen/dp_16" />
+                            <TextView
+                                android:id="@+id/rankdes4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="赛罗迪迦奥特曼最强传承"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_40"
+                                android:textSize="@dimen/dp_16" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginLeft="@dimen/dp_275"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:id="@+id/playBtn01004"
+                                android:src="@drawable/playbtn"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_70"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:tag="rankicon1_8"
+                            android:id="@+id/rankicon1_8"
+                            android:visibility="gone"
+                            android:onClick="openWeb"
+                            android:padding="@dimen/dp_1" >
+                            <TextView
+                                android:id="@+id/tv_despaihang1text005"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="8"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/dp_20" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_70"
+                                android:layout_height="@dimen/dp_70"
+                                android:layout_marginLeft="@dimen/dp_22"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:id="@+id/rankicon8"
+                                android:src="@drawable/icon000"
+                                />
+                            <TextView
+                                android:id="@+id/rankname8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="羊羊保卫战"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:textSize="@dimen/dp_16" />
+                            <TextView
+                                android:id="@+id/rankdes5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="赛罗迪迦奥特曼最强传承"
+                                android:textColor="#000"
+                                android:layout_marginLeft="@dimen/dp_100"
+                                android:layout_marginTop="@dimen/dp_40"
+                                android:textSize="@dimen/dp_16" />
+                            <ImageView
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginLeft="@dimen/dp_275"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:id="@+id/playBtn01005"
+                                android:src="@drawable/playbtn"
+                                />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/switchpage"
+        android:layout_weight="1"
+        android:layout_height="@dimen/dp_55">
+
+        <ImageView
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_94"
+            android:layout_marginTop="@dimen/dp_0"
+            android:id="@+id/popPage"
+            android:src="@drawable/popbtnchoosed"
+            android:clickable="true"
+            android:onClick="switchPop"
+            />
+
+        <TextView
+            android:id="@+id/poptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门"
+            android:textColor="#ff0000"
+            android:layout_marginLeft="@dimen/dp_94"
+            android:layout_marginTop="@dimen/dp_28"
+            android:clickable="true"
+            android:onClick="switchPop"
+            android:textSize="@dimen/dp_14" />
+
+
+        <ImageView
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_230"
+            android:layout_marginTop="@dimen/dp_0"
+            android:id="@+id/rankPage"
+            android:src="@drawable/rankbtn"
+            android:clickable="true"
+            android:onClick="switchRank"
+            />
+
+        <TextView
+            android:id="@+id/ranktitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="排行"
+            android:textColor="#C0C0C0"
+            android:layout_marginLeft="@dimen/dp_231"
+            android:layout_marginTop="@dimen/dp_28"
+            android:onClick="switchRank"
+            android:clickable="true"
+            android:textSize="@dimen/dp_14" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
